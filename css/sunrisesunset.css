@@ -1,0 +1,39 @@
+/* Sunrise/Sunset Styles */
+.sunrise-sunset-holder {
+	background-color: #333;
+	margin-left: 10px;
+	min-height: 110px;
+	min-width: 120px;
+}
+
+.sunrise-sunset {
+	font-size: .7em;
+}
+
+.sunrise-sunset-holder .sunrise-sunset.sun-graphical {
+	background: url(../images/sunmoon-small.png) no-repeat;
+	background-position-x: 43px;
+	background-position-y: 20px;
+	background-size: 61px;
+}
+
+.col-sm-1.sunrise-sunset-holder {
+	padding-right: 0;
+}
+
+.sunrise-sunset span {
+	display: block;
+}
+
+.sunrise-sunset span strong {
+	display: block;
+	font-weight: 500;
+}
+
+.time-sunrise {
+	padding-top: 20px;
+}
+
+.time-sunset {
+	padding-top: 4px;
+}
