@@ -13,6 +13,8 @@ A WordPress plugin to integrate with the excellent earthtools.org web services.
 Plugin integrates with earthtools.org web service to display sunrise/sunset information for a passed latitude/longitude (defaults to Waterville, Maine).
 Server will store the information for one hour before querying the web service again.
 
+Sun/moon graphic by RPH Studio (http://www.rphstudio.com)
+
 # Installation
 Simply copy the folder into your wp-content/plugins directory and activate for the sites you wish to use plugin on.
 
