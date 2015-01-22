@@ -7,7 +7,7 @@ Stable tag: .5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A WordPress plugin to integrate with the excellent earthtools.org web services.
+A WordPress plugin to display sunrise and sunset times for a given latitude and longitude.
 
 #== Description ==
 Plugin displays sunrise/sunset information for a passed latitude/longitude (defaults to Waterville, Maine).
