@@ -1,4 +1,4 @@
-#=== Multisite Shared Menu ===
+#=== Sunrise/Sunset ===
 Contributors: ben.greeley
 Tags: sunrise, sunset, shortcode, widget
 Requires at least: 3.0.1
@@ -10,8 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 A WordPress plugin to integrate with the excellent earthtools.org web services.
 
 #== Description ==
-Plugin integrates with earthtools.org web service to display sunrise/sunset information for a passed latitude/longitude (defaults to Waterville, Maine).
-Server will store the information for one hour before querying the web service again.
+Plugin displays sunrise/sunset information for a passed latitude/longitude (defaults to Waterville, Maine).
 
 Sun/moon graphic by RPH Studio (http://www.rphstudio.com)
 
