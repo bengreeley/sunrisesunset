@@ -2,7 +2,7 @@
 /*
  * Plugin Name:       Sunrise/Sunset
  * Plugin URI:        http://www.github.com/bengreeley/sunrisesunset
- * Description:       A WordPress plugin to integrate with the awesome earthtools.org web services.
+ * Description:       A WordPress plugin to display sunrise and sunset times for a given latitude and longitude.
  * Version:           0.5
  * Author:            Ben Greeley
  * Author URI:        http://www.bengreeley.com

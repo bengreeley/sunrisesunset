@@ -42,30 +42,19 @@ class SunriseSunset {
 	public function run_sunrisesunset($atts) {
 		
 		extract( shortcode_atts( array(
-				'lat' => '44.15',		// Latitude value
-				'long' => '-69.64',		// Longitude value
-				'graphical' => 'true'	// Display moon information?
+				'lat' => '44.5519',			// Latitude value
+				'long' => '-69.6458',		// Longitude value
+				'graphical' => 'true'		// Display moon information?
 				
 			), $atts, 'sunrisesunset' ) );
-		
+				
 		$transName = $this->plugin_name;
-		$cacheTime = 60;				// Refresh cache every 1 hour
-		
-		if(false === ($sunrisedata = get_transient($transName) ) ) {
-			// Refresh the cache by grabbing the data...
-		   $sunrisedata = wp_remote_get('http://www.earthtools.org/sun/' . $lat . '/'. $long .'/' . date('n', strtotime('now') ) . '/'. date('j', strtotime('now')) . '/99/0');
-		   
-		   if ( !is_wp_error( $sunrisedata ) ) {
-		   	set_transient($transName, $sunrisedata, 60 * $cacheTime);	// Set it and forget it
-		   }
-		}
-		
-		if ( isset( $sunrisedata )) {
-			$body = wp_remote_retrieve_body($sunrisedata);
-			$xml = simplexml_load_string($body);
-			
-			$this->display_sunrisesunset( $xml->morning->sunrise, $xml->evening->sunset, $graphical == 'true' );
-		}
+		$zenith = 90+(50/60);
+		$tzOffset = (date("Z", strtotime('now'))/60 / 60);
+
+		$sunrisedata = date_sunrise(strtotime('now'), SUNFUNCS_RET_STRING, $lat, $long, $zenith, $tzOffset);
+		$sunsetdata = date_sunset(strtotime('now'), SUNFUNCS_RET_STRING, $lat, $long, $zenith, $tzOffset);
+		$this->display_sunrisesunset( $sunrisedata, $sunsetdata, $graphical == 'true' );
 		
 		return;
 	}
@@ -77,7 +66,6 @@ class SunriseSunset {
 		$graphical - bool true to display sun/moon with output.
 	*/	
 	public function display_sunrisesunset($sunrise, $sunset, $graphical = true) {
-
 	?>
 		<div class="sunrise-sunset<?php echo ( $graphical == true? ' sun-graphical':'');?>">
 			<span class="time-sunrise"><strong>Sunrise</strong><?php echo date('g:i a', strtotime( date('n/j/Y', strtotime('now')) . $sunrise )); ?></span>
